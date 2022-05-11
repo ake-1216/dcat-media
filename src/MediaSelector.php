@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 class MediaSelector extends Field
 {
-    protected $view = 'dcat-media-selector::index';
+    protected $view = 'media::index';
 
     protected $selectList;
 
