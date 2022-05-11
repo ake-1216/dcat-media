@@ -32,9 +32,9 @@ class DcatMediaSelectorServiceProvider extends ServiceProvider
      */
     protected function registerPublishing()
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'dcat-media-selector');
-        $this->publishes([__DIR__ . '/../updates' => database_path('migrations')], 'dcat-media-selector-migrations');
-        $this->publishes([__DIR__ . '/../resources/assets' => public_path('vendor/dcat-admin-extensions/de-memory/dcat-media-selector')], 'dcat-media-selector-assets');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'media');
+        $this->publishes([__DIR__ . '/../updates' => database_path('migrations')], 'media');
+        $this->publishes([__DIR__ . '/../resources/assets' => public_path('vendor/dcat-admin-extensions/ake/media')], 'media');
     }
 
     public function register()
@@ -49,6 +49,5 @@ class DcatMediaSelectorServiceProvider extends ServiceProvider
         $this->commands($this->commands);
 
         $this->registerPublishing();
-
     }
 }

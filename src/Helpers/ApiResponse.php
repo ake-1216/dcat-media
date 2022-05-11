@@ -62,7 +62,6 @@ trait ApiResponse
 
         $data = array_merge($status, $data);
         return $this->respond($data);
-
     }
 
     /**
@@ -108,7 +107,6 @@ trait ApiResponse
     {
         return $this->setStatusCode(FoundationResponse::HTTP_CREATED)
             ->message($message);
-
     }
 
     /**
