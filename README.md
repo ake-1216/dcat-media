@@ -22,7 +22,7 @@
 ### composer 安装
 
 ```
-composer require de-memory/dcat-media-selector
+composer require ake/media
 ```
 
 ### 后台发布
