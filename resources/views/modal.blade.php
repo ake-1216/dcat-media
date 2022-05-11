@@ -133,7 +133,7 @@
 </div>
 
 <script init="{{ $selector }}"
-        require="@select-table,@select2?lang={{ config('app.locale') === 'en' ? '' : str_replace('_', '-', config('app.locale')) }},@de-memory.dcat-media-selector">
+        require="@select-table,@select2?lang={{ config('app.locale') === 'en' ? '' : str_replace('_', '-', config('app.locale')) }},@de-memory.media">
 
 
     var langs = {!! $lang !!}, // 错误信息
