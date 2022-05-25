@@ -49,7 +49,7 @@ php artisan dcat-media-selector:install
 composer update
 
 // 强制发布静态资源文件
-php artisan vendor:publish --tag=dcat-media-selector-assets --force
+php artisan vendor:publish --tag=media
 
 // 清理视图缓存
 php artisan view:clear
