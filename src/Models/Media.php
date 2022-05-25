@@ -18,9 +18,4 @@ class Media extends Model
     {
         return $this->belongsTo(MediaGroup::class);
     }
-
-    public function getCreatedAtAttribute($key)
-    {
-        return date(Carbon::DEFAULT_TO_STRING_FORMAT, $key);
-    }
 }

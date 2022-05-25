@@ -49,5 +49,7 @@ class DcatMediaSelectorServiceProvider extends ServiceProvider
         $this->commands($this->commands);
 
         $this->registerPublishing();
+
+        Admin::requireAssets('@ake.media');
     }
 }

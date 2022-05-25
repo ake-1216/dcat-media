@@ -75,7 +75,9 @@ class MediaService
 
     public function upload(UploadedFile $file, $mediaGroupId, $move)
     {
+        #文件类型
         $mime_type = $file->getMimeType();
+        #文件类型拆分(类型,前缀['type' => 'image', 'suffix' => 'jpeg'])
         $type_info = $this->_getTypeInfoByMimeType($mime_type);
 
         //配置上传信息
@@ -85,15 +87,21 @@ class MediaService
 
         $disk = config('filesystems.default');
 
+        #保存文件夹(默认为upload_files)
+        $folder = $move->dir . '/' . date('Ym'); //保存文件夹
 
-        $folder = $move->dir; //保存文件夹
-
+        #move => {"dir":"upload_files","fileNameIsEncrypt":true}
+        #dir 为目录名, fileNameIsEncrypt是否加密文件名
+        #生成文件名
         $file_name = $this->_getFileName($move, $file);
 
+        #保存文件,并返回存储路径
         $path = $file->storeAs($folder, $file_name);
 
+        #获取文件在类型数组中属于哪一类 Storage::disk(config('admin.upload.disk'))->url($path)
         $getFileType = FileUtil::getFileType(Storage::disk(config('admin.upload.disk'))->url($path));
 
+        #组装文件信息
         $meta = $this->_getMeta($file, $getFileType, $type_info['suffix']);
 
         $time = date('Y-m-d H:i:s');
@@ -163,7 +171,7 @@ class MediaService
                     'size' => $file->getSize(),
                     'width' => 0,
                     'height' => 0
-                ];;
+                ];
         }
         return $meta;
     }
