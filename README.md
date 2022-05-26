@@ -1,8 +1,8 @@
 # dcat-admin 表单媒体资源选择器
 基于de-memory/dcat-media-selector 去做的修改
 <p align="center">
-    <a href="https://packagist.org/packages/de-memory/dcat-media-selector">
-        <img src="https://img.shields.io/packagist/dt/de-memory/dcat-media-selector.svg?color=" />
+    <a href="https://packagist.org/packages/ake/media">
+        <img src="https://img.shields.io/packagist/dt/ake/media.svg?color=" />
     </a> 
     <a><img src="https://img.shields.io/badge/php-7.1+-59a9f8.svg?style=flat" /></a> 
     <a><img src="https://img.shields.io/badge/laravel-7.29+-59a9f8.svg?style=flat" ></a>
